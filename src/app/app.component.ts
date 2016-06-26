@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
+
+import '../../styles.css'; //import, so that webpack packs it up
+
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.html',
-  styleUrls: ['app/style.css'],
+  template: require('./app.component.html'),
+  styles: [require('./app.component.css')],
   directives: [HeroDetailComponent],
   providers: [HeroService]
 })
