@@ -3,8 +3,8 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HeaderComponent } from './header.component';
-import { MenuComponent } from './menu.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
   imports: [
     BrowserModule,
