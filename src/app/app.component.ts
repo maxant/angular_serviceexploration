@@ -4,7 +4,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 import { OtherService } from './other.service';
 
-import '../../styles.css'; //import, so that webpack packs it up
+import '../styles.css'; //import, so that webpack packs it up
 
 @Component({
   selector: 'my-app',
