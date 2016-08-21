@@ -7,7 +7,7 @@ import { OtherService } from './other.service';
 import '../styles.css'; //import, so that webpack packs it up
 
 @Component({
-  selector: 'my-app',
+  selector: 'app',
   template: require('./app.component.html'),
   styles: [require('./app.component.css')],
   directives: [HeroDetailComponent],
