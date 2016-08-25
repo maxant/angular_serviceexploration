@@ -1,1 +1,23 @@
-<li>some menu content</li>
+<a routerLink="/">home</a>
+<br/>
+<br/>
+<div *ngFor="let market of getModel().markets">
+    <span *ngIf="market.name">
+        <!-- dont work:
+        <a [routerLink]="['/market', {id: market.id}]" routerLinkActive="active">{{market.name}}</a>
+        <a routerLink="['/market', {id: market.id}]" >{{market.name}}</a>
+        <a routerLink="['/market', market.id]" >{{market.name}}</a>
+        -->
+
+        <!-- works -->
+        <a [routerLink]="['/market', market.id]" >{{market.name}}</a>
+
+        <!-- works, but a bit 'händisch'
+        <a routerLink="/market/{{market.id}}" >{{market.name}}</a>
+        -->
+    </span>
+    <span *ngIf="!market.name">
+        <a (click)="marketSelected(market)">No name</a>
+    </span>
+</div>
+

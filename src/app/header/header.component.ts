@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 var css = require('./header.component.css');
-console.log("CSS IS " + css);
 
 @Component({
   selector: 'header',

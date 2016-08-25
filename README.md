@@ -6,6 +6,8 @@
 
 Then go to [http://localhost:8080](http://localhost:8080)
 
+Every file change leads to a new build cycle and the browser refreshes automatically.
+
 ## Prod
 
     npm run build
@@ -14,11 +16,13 @@ Then go to [http://localhost:8080](http://localhost:8080)
 
     http-server
 
+Then go to [http://localhost:8080](http://localhost:8080)
+
 # Watch out
 
 - Component CSS files are ONLY applied to their components. There is no point in putting styles in those, if you want to use those styles outside of the component. The styles cannot even be applied to the parent, e.g. a style which is supposed to be applied to "header" cannot be located inside the header CSS file.
-
-Then go to [http://localhost:8080](http://localhost:8080)
+- Routing - tricky bit related to caching views - see comments in `market.component.ts`.
+- 
 
 # TODO
 
@@ -29,4 +33,7 @@ Then go to [http://localhost:8080](http://localhost:8080)
 - fix styling of menu to be a proper span on the left
 - what is the point of the "declarations" attribute on the @NgModule annotation in `app.module.ts`
 - forms
--
+- ng-prime
+- add lodash and then use it in market.component.ts
+- use @Input and `<market [market]="selectedMarket"></market>` somewhere, but first need to add a selector back to the market component
+- routerLinkActive => add some css styling to the active menu point
