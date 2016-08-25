@@ -36,4 +36,7 @@ Then go to [http://localhost:8080](http://localhost:8080)
 - ng-prime
 - add lodash and then use it in market.component.ts
 - use @Input and `<market [market]="selectedMarket"></market>` somewhere, but first need to add a selector back to the market component
-- routerLinkActive => add some css styling to the active menu point
+- routerLinkActive => add some css styling to the active menu option. or see [class.selected]="hero === selectedHero". both came from https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
+- remove hero stuff BUT MAINTAIN service exploration stuff
+- add some remote calls for initially getting the model. leave model access to be sync, since the model will always be in memory.
+- add `goBack(): void { window.history.back(); }`

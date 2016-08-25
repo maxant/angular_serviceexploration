@@ -31,7 +31,7 @@ export class MarketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.market = this.modelService.getModel().markets.find(m => m.id == this.id);
+      this.market = this.modelService.getModel().markets.find(m => String(m.id) === this.id);
     });
   }
 
