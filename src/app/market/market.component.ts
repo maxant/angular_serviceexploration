@@ -25,6 +25,7 @@ export class MarketComponent implements OnInit, OnDestroy {
     // then you'd do this here in the constructor:       this.market = this.modelService.getModel().markets.find(m => m.id == this.id);
     // or you'd even do all this below in the onInit, in order to make testing easier?
     //otherwise, need to subscribe and unsubscribe! see ngOnInit and ngOnDestroy below
+    //details in https://angular.io/docs/ts/latest/guide/router.html
   }
 
   ngOnInit() {

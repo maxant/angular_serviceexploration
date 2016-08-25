@@ -22,7 +22,7 @@ Then go to [http://localhost:8080](http://localhost:8080)
 
 - Component CSS files are ONLY applied to their components. There is no point in putting styles in those, if you want to use those styles outside of the component. The styles cannot even be applied to the parent, e.g. a style which is supposed to be applied to "header" cannot be located inside the header CSS file.
 - Routing - tricky bit related to caching views - see comments in `market.component.ts`.
-- 
+-
 
 # TODO
 
