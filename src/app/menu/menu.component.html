@@ -1,7 +1,7 @@
 <a routerLink="/">home</a>
 <br/>
 <br/>
-<div *ngFor="let market of getModel().markets">
+<div *ngFor="let market of markets">
     <span *ngIf="market.name">
         <!-- dont work:
         <a [routerLink]="['/market', {id: market.id}]" routerLinkActive="active">{{market.name}}</a>

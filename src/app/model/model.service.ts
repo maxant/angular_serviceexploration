@@ -1,31 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Market }     from '../market.integration.service';
+import { Router }     from '@angular/router';
 
-export class Market {
-    id: string;
-    name: string;
-    marketValue: number;
+export class Model {
+  markets: Market[] = [];
 }
 
 @Injectable()
 export class ModelService {
-  private model = {
-    markets: [
-        {
-            id: '1',
-            name: 'market1',
-            marketValue: 100.009
-        },
-        {
-            id: '2',
-            name: null,
-            //no name on purpose, to test using ng-if
-            marketValue: 200.01
-        }
-    ]
-  };
 
-  getModel(){
+  private model = new Model();
+
+  constructor(
+    private router: Router
+  ) { }
+
+  getModel() {
     return this.model;
   }
+
+  setMarkets(markets: Market[]) {
+    this.model.markets = markets;
+  }
+
 }
 

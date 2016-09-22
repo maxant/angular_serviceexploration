@@ -3,6 +3,8 @@ import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 import { OtherService } from './other.service';
+import { ModelService } from './model/model.service';
+import { MarketIntegrationService } from './market.integration.service';
 
 import '../styles.css'; //import, so that webpack packs it up
 
@@ -11,14 +13,18 @@ import '../styles.css'; //import, so that webpack packs it up
   template: require('./app.component.html'),
   styles: [require('./app.component.css')],
   directives: [HeroDetailComponent],
-  providers: [HeroService, OtherService]
+  providers: [HeroService, OtherService, ModelService]
 })
 export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
   heroes: Hero[];
   selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private marketIntegrationService: MarketIntegrationService,
+    private modelService: ModelService
+  ) { }
 
   getHeroes() {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
@@ -29,5 +35,6 @@ export class AppComponent implements OnInit {
   }
 
   onSelect(hero: Hero) { this.selectedHero = hero; }
+
 }
 

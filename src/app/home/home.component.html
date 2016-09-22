@@ -1,3 +1,13 @@
+<!-- the following two are in the component, since otherwise their content is rendered before the resolver completes.
+     on the one hand, that isn't so cool, because a) every time the route is changed, they are re-rendered, and b)
+     because every component in the router-outlet area needs to include them. on the other hand, if their content
+      is dependent on the route, e.g. a header might show a summary, then it is actually necessary to have them
+      re-rendered every time the route changes. -->
+
+<header></header>
+
+<menu></menu>
+
 Hello.
 
-There are {{getMarketSize()}} markets to peruse.
+There are {{getMarkets().length}} markets to peruse.
