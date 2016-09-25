@@ -1,5 +1,11 @@
 <router-outlet></router-outlet>
 
+<div [hidden]="!isWaiting()" class="waiting">
+    <div style="height: 40%;"></div>
+    calling server...
+</div>
+
+
 <hr/>
 
 <span class="content">

@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     private modelService: ModelService
   ) { }
 
+  isWaiting() {
+    return this.marketIntegrationService.isWaiting;
+  }
+
   getHeroes() {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }

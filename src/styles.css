@@ -1,3 +1,17 @@
+/* Ants stuff */
+div.waiting {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    background-color: rgba(200,200,200,0.8);
+    text-align: center;
+    font-size: xx-large;
+}
+
+
 /* Master Styles */
 h1 {
   color: #369; 

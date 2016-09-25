@@ -12,9 +12,13 @@ const url = 'rest/markets';  // URL to web api
 @Injectable()
 export class MarketIntegrationService {
 
+  public isWaiting = false;
+
   constructor(private http: Http) { }
 
   getMarkets(): Promise<Market[]> {
+    this.isWaiting = true;
+/*
 //TODO replace with http call below
     let markets = [
         {
@@ -29,13 +33,14 @@ export class MarketIntegrationService {
         }
     ];
     return Promise.resolve(markets); //this was the mocked response, ie using a promise with no server call
-/*
+*/
     return this.http.get(url)
            .toPromise()
-           .then(response =>
-               response.json().data as Market[] //see how we use "as" to clarify the types from the server :-)
-           ).catch(this.handleError);
-*/
+           .then(response => {
+               this.isWaiting = false;
+               console.log("got response from server: " + JSON.stringify(response));
+               return response.json().data as Market[]; //see how we use "as" to clarify the types from the server :-)
+           }).catch(this.handleError);
     //example of posting data:
     //let headers = new Headers({'Content-Type': 'application/json'});
     //return this.http.post(url, JSON.stringify(market), {headers: headers})
