@@ -26,8 +26,7 @@ Then go to [http://localhost:8080](http://localhost:8080)
 
 # TODO
 
-- USE HTTP IN THE INTEGRATION SERVICE!!!
-- how to add an overlay while the server is being called?
+- update from RC to release version of angular2
 - fix TS debugging in in dev mode - works find in prod but not in dev... => problem seems to be that webpack is evaling the app code. there is some source mapping in there, but it doesnt seem to work properly.
 - read rest of DI chapter
 - fix styling of menu to be a proper span on the left
