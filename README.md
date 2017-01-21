@@ -30,11 +30,12 @@ Then go to [http://localhost:8080](http://localhost:8080)
 -
 
 # TODO
+- double check that resolver etc. is working properly and i havent got any dumb design in there.
+- why karma tests dont work?
 - need these in package.json?
     - "@angular/upgrade": "2.4.4",
     - "reflect-metadata": "^0.1.9",
-- update from RC to release version of angular2
-- fix TS debugging in in dev mode - works find in prod but not in dev... => problem seems to be that webpack is evaling the app code. there is some source mapping in there, but it doesnt seem to work properly.
+- still an issue? latest webpack might have fixed this? - fix TS debugging in dev mode - works find in prod but not in dev... => problem seems to be that webpack is evaling the app code. there is some source mapping in there, but it doesnt seem to work properly.
 - read rest of DI chapter
 - fix styling of menu to be a proper span on the left
 - what is the point of the "declarations" attribute on the @NgModule annotation in `app.module.ts` and why do we have to add so much to it?!

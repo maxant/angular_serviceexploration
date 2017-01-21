@@ -10,25 +10,26 @@ export class HeroService {
   constructor(private otherService: OtherService){}
   getHeroes() {
 
-    {
-        //here we are testing passing a function as a parameter
-        console.log("otherService: " + this.otherService);
+    //here we are testing passing a function as a parameter
+    console.log("otherService: " + this.otherService);
 
-        this.otherService.doSomethingTakingAFunctionAsAParameter(this.aFunctionToPassAsAParameter);
+    this.otherService.doSomethingTakingAFunctionAsAParameter(this.aFunctionToPassAsAParameter);
 
-        const localCopy = this.someOtherMemberVariable1;
-        function aLocalFunction(aTestString: string){
-          //using a field here doesnt work anyway, thats why were using a closure variable
-          console.log("that worked too :-) " + aTestString + " / " + localCopy);
-        }
-        this.otherService.doSomethingTakingAFunctionAsAParameter(aLocalFunction);
-
-        let aLocalArrowFunction = (aTestString: string) => {
-          //no problem using member variables here, because arrow functions scope differently
-          console.log("that worked three :-) " + aTestString + " / " + this.someOtherMemberVariable2);
-        };
-        this.otherService.doSomethingTakingAFunctionAsAParameter(aLocalArrowFunction);
+    const localCopy = this.someOtherMemberVariable1;
+    function aLocalFunction(aTestString: string){
+      //using a field here doesnt work anyway, thats why were using a closure variable
+      console.log("that worked too :-) " + aTestString + " / " + localCopy);
     }
+    this.otherService.doSomethingTakingAFunctionAsAParameter(aLocalFunction);
+
+    let aLocalArrowFunction = (aTestString: string) => {
+      //no problem using member variables here, because arrow functions scope differently
+      console.log("that worked three :-) " + aTestString + " / " + this.someOtherMemberVariable2);
+    };
+    this.otherService.doSomethingTakingAFunctionAsAParameter(aLocalArrowFunction);
+
+
+
 
     //now do what this method was designed to do and return some data
     return Promise.resolve(HEROES);

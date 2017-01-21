@@ -12,7 +12,6 @@ import '../styles.css'; //import, so that webpack packs it up
   selector: 'app',
   template: require('./app.component.html'),
   styles: [require('./app.component.css')],
-  directives: [HeroDetailComponent],
   providers: [HeroService, OtherService, ModelService]
 })
 export class AppComponent implements OnInit {

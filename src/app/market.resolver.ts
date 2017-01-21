@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Market, MarketIntegrationService } from './market.integration.service';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class MarketResolver implements Resolve<Market[]> {
 
   constructor(private mis: MarketIntegrationService) { }
 
-  resolve(route: ActivatedRouteSnapshot): Promise<Market[]>|boolean {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Market[]> {
     if(!this.promise){
       this.promise = this.mis.getMarkets();
     }
