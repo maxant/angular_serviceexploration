@@ -18,6 +18,11 @@ Every file change leads to a new build cycle and the browser refreshes automatic
 
 Then go to [http://localhost:8080](http://localhost:8080)
 
+# References
+
+- https://angular.io/docs/ts/latest/guide/webpack.html
+
+
 # Watch out
 
 - Component CSS files are ONLY applied to their components. There is no point in putting styles in those, if you want to use those styles outside of the component. The styles cannot even be applied to the parent, e.g. a style which is supposed to be applied to "header" cannot be located inside the header CSS file.
@@ -25,7 +30,9 @@ Then go to [http://localhost:8080](http://localhost:8080)
 -
 
 # TODO
-
+- need these in package.json?
+    - "@angular/upgrade": "2.4.4",
+    - "reflect-metadata": "^0.1.9",
 - update from RC to release version of angular2
 - fix TS debugging in in dev mode - works find in prod but not in dev... => problem seems to be that webpack is evaling the app code. there is some source mapping in there, but it doesnt seem to work properly.
 - read rest of DI chapter
