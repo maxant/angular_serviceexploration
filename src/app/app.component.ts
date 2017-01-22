@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
-import { OtherService } from './other.service';
-import { ModelService } from './model/model.service';
-import { MarketIntegrationService } from './market.integration.service';
+import { Component, OnInit } from "@angular/core";
+import { Hero } from "./hero";
+import { HeroDetailComponent } from "./hero-detail.component";
+import { HeroService } from "./hero.service";
+import { OtherService } from "./other.service";
+import { ModelService } from "./model/model.service";
+import { MarketIntegrationService } from "./market.integration.service";
 
-import '../styles.css'; //import, so that webpack packs it up
+import "../styles.css"; // import, so that webpack packs it up
 
 @Component({
-  selector: 'app',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.css')],
+  selector: "app",
+  template: require("./app.component.html"),
+  styles: [require("./app.component.css")],
   providers: [HeroService, OtherService, ModelService]
 })
 export class AppComponent implements OnInit {
-  title = 'Tour of Heroes';
+  title = "Tour of Heroes";
   heroes: Hero[];
   selectedHero: Hero;
 

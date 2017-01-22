@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 /** the idea here is to show how you can pass a method/function as a parameter => no need for self references or clever stuff */
 @Injectable()

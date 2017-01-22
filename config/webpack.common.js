@@ -3,8 +3,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
-console.log("\r\n\r\nHERE: " + helpers.root('node_modules', '@types'));
-
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
@@ -17,6 +15,12 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.ts$/,
+        loader: 'tslint-loader'
+      }
+    ],
     loaders: [
       {
         test: /\.ts$/,

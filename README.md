@@ -49,7 +49,6 @@ Then go to [http://localhost:8080](http://localhost:8080)
 - add `goBack(): void { window.history.back(); }`
 - how can we add static compiling to our build?
 - investigate child routes? see https://angular.io/docs/ts/latest/guide/router.html for examples
-- add linting into webpack build
 - aot: https://angular.io/docs/ts/latest/cookbook/aot-compiler.html
 - i18n: https://angular.io/docs/ts/latest/cookbook/i18n.html
 - 

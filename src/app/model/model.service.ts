@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Market }     from '../market.integration.service';
-import { Router }     from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Market }     from "../market.integration.service";
+import { Router }     from "@angular/router";
 
 export class Model {
   markets: Market[] = [];
