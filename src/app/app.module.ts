@@ -13,6 +13,8 @@ import { MarketResolver }       from "./market.resolver";
 
 import { MarketIntegrationService }         from "./market.integration.service";
 
+import {ButtonModule} from "primeng/primeng";
+
 // TEMPORARY, TO REPLACE A REAL BACK END SERVICE:
 // Imports for loading & configuring the in-memory web api
 import { XHRBackend }                        from "@angular/http";
@@ -24,7 +26,10 @@ import { MockMarkets }                       from "./mock.markets";
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+
+    // primeng
+    ButtonModule
   ],
   declarations: [
     AppComponent,

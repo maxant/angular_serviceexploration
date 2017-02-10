@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   title = "Tour of Heroes";
   heroes: Hero[];
   selectedHero: Hero;
+  clickCount: number = 0;
 
   constructor(
     private heroService: HeroService,
@@ -39,5 +40,8 @@ export class AppComponent implements OnInit {
 
   onSelect(hero: Hero) { this.selectedHero = hero; }
 
+  onclick() {
+    this.clickCount++;
+  }
 }
 

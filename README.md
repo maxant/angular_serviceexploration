@@ -18,6 +18,12 @@ Every file change leads to a new build cycle and the browser refreshes automatic
 
 Then go to [http://localhost:8080](http://localhost:8080)
 
+Note that in order for bookmarks to work, like `http://localhost:8080/market/2`, the server needs to know that 
+it should tell the browser to load `index.html`. See http://stackoverflow.com/questions/31415052/angular-2-0-router-not-working-on-reloading-the-browser
+In nginx this can be achieved with:
+
+    error_page 404 =200 /index.html
+
 # References
 
 - https://angular.io/docs/ts/latest/guide/webpack.html
@@ -31,6 +37,7 @@ Then go to [http://localhost:8080](http://localhost:8080)
 
 # TODO
 - double check that resolver etc. is working properly and i havent got any dumb design in there.
+- i18n and plurals
 - why karma tests dont work?
 - need these in package.json?
     - "@angular/upgrade": "2.4.4",
@@ -40,7 +47,6 @@ Then go to [http://localhost:8080](http://localhost:8080)
 - fix styling of menu to be a proper span on the left
 - what is the point of the "declarations" attribute on the @NgModule annotation in `app.module.ts` and why do we have to add so much to it?!
 - forms
-- ng-prime
 - add lodash and then use it in market.component.ts
 - use @Input and `<market [market]="selectedMarket"></market>` somewhere, but first need to add a selector back to the market component
 - use @Output and emit some events
