@@ -12,4 +12,7 @@ import "rxjs";
 
 require("font-awesome-webpack");
 
+// Prime NG:
 import "primeng/primeng";
+import "../node_modules/primeng/resources/themes/omega/theme.css";
+import "../node_modules/primeng/resources/primeng.min.css";
