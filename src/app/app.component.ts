@@ -6,6 +6,8 @@ import { OtherService } from "./other.service";
 import { ModelService } from "./model/model.service";
 import { MarketIntegrationService } from "./market.integration.service";
 
+const _ = require("lodash");
+
 import "../styles.css"; // import, so that webpack packs it up
 
 @Component({
@@ -36,6 +38,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroes();
+
+    console.log("app.component init - using lodash version " + _.VERSION);
   }
 
   onSelect(hero: Hero) { this.selectedHero = hero; }
