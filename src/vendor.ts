@@ -6,9 +6,10 @@ import "@angular/http";
 import "@angular/router";
 
 import "rxjs";
+
 import "lodash";
 
-require("font-awesome-webpack");
+import "font-awesome-webpack";
 
 // Prime NG:
 import "primeng/primeng";
