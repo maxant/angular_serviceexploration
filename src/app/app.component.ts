@@ -6,7 +6,7 @@ import { OtherService } from "./other.service";
 import { ModelService } from "./model/model.service";
 import { MarketIntegrationService } from "./market.integration.service";
 
-const _ = require("lodash");
+import * as _ from "lodash";
 
 import "../styles.css"; // import, so that webpack packs it up
 

@@ -9,8 +9,7 @@
     "lib": ["es2015", "dom"],
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "types" : ["node"] //dont want this, but without it we just get tons of compiler errors for node_modules/@types folders!!
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "node_modules"
