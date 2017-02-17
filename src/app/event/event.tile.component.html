@@ -1,0 +1,24 @@
+<div class="event-tile">
+
+    <table width="100%" cellpadding="5">
+        <tr>
+            <td width="1%">
+                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+            </td>
+            <td width="98*">
+                <div class="title">
+                    {{event.title}}
+                </div>
+                <div class="location">
+                    {{event.location}}
+                </div>
+            </td>
+            <td width="20px" (click)="menu.toggle($event)" >
+                <p-menu #menu popup="popup" [model]="items"></p-menu>
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </td>
+        </tr>
+    </table>
+
+
+</div>

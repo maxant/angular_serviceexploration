@@ -32,10 +32,15 @@ In nginx this can be achieved with:
 
 - Component CSS files are ONLY applied to their components. There is no point in putting styles in those, if you want to use those styles outside of the component. The styles cannot even be applied to the parent, e.g. a style which is supposed to be applied to "header" cannot be located inside the header CSS file.
 - Routing - tricky bit related to caching views - see comments in `market.component.ts`.
+- Force webpack re-compilation if IntelliJ is playing up: 
+
+      find src/ -type f -exec touch {} +
 
 # TODO
 - double check that resolver etc. is working properly and i havent got any dumb design in there.
 - why karma tests dont work?
+- get karma running continuously with webpack
+- write protractor e2e tests
 - read rest of module chapter
 - read rest of DI chapter
 - fix styling of menu to be a proper span on the left

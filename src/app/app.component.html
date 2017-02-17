@@ -1,13 +1,17 @@
 <router-outlet></router-outlet>
 
+<hr/>
+
+<event-app></event-app>
+
+<hr/>
+
 <div [hidden]="!isWaiting()" class="waiting">
     <div style="height: 40%;"></div>
     calling server...
 </div>
 
 <hr/>
-
-<i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>
 
 <button pButton type="button" icon="fa-check" iconPos="left" (click)="onclick()" label="Click me"></button>
 You clicked the button {{clickCount}} times.

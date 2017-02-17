@@ -10,10 +10,12 @@ import { MarketComponent }      from "./market/market.component";
 import { HomeComponent }        from "./home/home.component";
 import { routing }              from "./app.routing";
 import { MarketResolver }       from "./market.resolver";
+import { EventComponent }       from "./event/event.component";
+import { EventTileComponent }   from "./event/event.tile.component";
 
 import { MarketIntegrationService }         from "./market.integration.service";
 
-import {ButtonModule} from "primeng/primeng";
+import { ButtonModule, MenuModule } from "primeng/primeng";
 
 // TEMPORARY, TO REPLACE A REAL BACK END SERVICE:
 // Imports for loading & configuring the in-memory web api
@@ -29,7 +31,8 @@ import { MockMarkets }                       from "./mock.markets";
     routing,
 
     // primeng
-    ButtonModule
+    ButtonModule,
+    MenuModule
   ],
   declarations: [
     AppComponent,
@@ -37,7 +40,9 @@ import { MockMarkets }                       from "./mock.markets";
     HeaderComponent,
     MenuComponent,
     MarketComponent,
-    HomeComponent
+    HomeComponent,
+    EventComponent,
+    EventTileComponent
   ],
 
   providers: [
