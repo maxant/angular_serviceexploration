@@ -45,7 +45,6 @@ In nginx this can be achieved with:
       find src/ -type f -exec touch {} +
 
 # TODO
-- double check that resolver etc. is working properly and i havent got any dumb design in there.
 - why karma tests dont work?
 - get karma running continuously with webpack
 - write protractor e2e tests
@@ -54,7 +53,6 @@ In nginx this can be achieved with:
 - fix styling of menu to be a proper span on the left
 - what is the point of the "declarations" attribute on the @NgModule annotation in `app.module.ts` and why do we have to add so much to it?!
 - forms
-- use @Input and `<market [market]="selectedMarket"></market>` somewhere, but first need to add a selector back to the market component
 - use @Output and emit some events
 - routerLinkActive => add some css styling to the active menu option. or see [class.selected]="hero === selectedHero". both came from https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
 - remove hero stuff BUT MAINTAIN service exploration stuff
