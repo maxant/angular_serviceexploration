@@ -17,8 +17,7 @@ export class MarketIntegrationService {
   constructor(private http: Http) { }
 
   getMarkets(): Promise<Market[]> {
-    this.isWaiting = true;
-/*
+
 // TODO replace with http call below
     let markets = [
         {
@@ -33,7 +32,8 @@ export class MarketIntegrationService {
         }
     ];
     return Promise.resolve(markets); // this was the mocked response, ie using a promise with no server call
-*/
+/*
+    this.isWaiting = true;
     return this.http.get(url)
            .toPromise()
            .then(response => {
@@ -47,6 +47,7 @@ export class MarketIntegrationService {
 
     // example of typescript string replacement:
     // let url2 = `${url}/${market.id}`;
+*/
   }
 
   private handleError(error: any): Promise<any> {

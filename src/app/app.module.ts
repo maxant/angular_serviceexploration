@@ -10,18 +10,14 @@ import { MarketComponent }      from "./market/market.component";
 import { HomeComponent }        from "./home/home.component";
 import { routing }              from "./app.routing";
 import { MarketResolver }       from "./market.resolver";
+import { EventResolver }        from "./event/event.resolver";
 import { EventComponent }       from "./event/event.component";
 import { EventTileComponent }   from "./event/event.tile.component";
 
 import { MarketIntegrationService }         from "./market.integration.service";
+import { EventIntegrationService }         from "./event/event.integration.service";
 
 import { ButtonModule, MenuModule } from "primeng/primeng";
-
-// TEMPORARY, TO REPLACE A REAL BACK END SERVICE:
-// Imports for loading & configuring the in-memory web api
-import { XHRBackend }                        from "@angular/http";
-import { InMemoryBackendService, SEED_DATA } from "angular2-in-memory-web-api";
-import { MockMarkets }                       from "./mock.markets";
 
 @NgModule({
   imports: [
@@ -48,10 +44,8 @@ import { MockMarkets }                       from "./mock.markets";
   providers: [
     MarketIntegrationService, // singleton
     MarketResolver, // coz putting it in the app aint good enough
-
-    // TEMPORARY TO REPLACE A REAL BACK END SERVICE:
-    { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
-    { provide: SEED_DATA,  useClass: MockMarkets }
+    EventIntegrationService, // singleton
+    EventResolver // coz putting it in the app aint good enough
   ],
 
   bootstrap: [ AppComponent ]

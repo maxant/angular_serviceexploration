@@ -24,6 +24,14 @@ In nginx this can be achieved with:
 
     error_page 404 =200 /index.html
 
+# Running with Backend
+
+- uses nginx
+- see /etc/hosts => `tulliamaxantch`
+- see /etc/nginx/vhosts/tullia.conf
+- app runs at: http://tulliamaxantch/ which redirects to http://tulliamaxantch/ui/
+- backend runs at http://tulliamaxantch/events and other URLs like that
+
 # References
 
 - https://angular.io/docs/ts/latest/guide/webpack.html
