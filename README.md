@@ -2,15 +2,23 @@
 
 ## Dev
 
-    npm run start
+    npm start
 
 Then go to [http://localhost:8080](http://localhost:8080)
 
 Every file change leads to a new build cycle and the browser refreshes automatically.
 
+## Test
+
+    npm test
+
+Every file change leads to a new build cycle and the tests re-run automatically.
+
+TODO introduce a mode which CI can use to run tests just once
+
 ## Prod
 
-    npm run build
+    npm build
 
     cd dist
 

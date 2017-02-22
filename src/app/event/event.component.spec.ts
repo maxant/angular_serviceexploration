@@ -53,6 +53,7 @@ describe('EventComponent', () => {
 
     des = fixture.debugElement.queryAll(By.css('event-tile .test-event-tile-title'));
     expect(des.length).toBe(2);
+    expect(comp.events.length).toBe(2);
 
     el = des[0].nativeElement;
     expect(el.textContent).toContain("e1");
@@ -71,7 +72,10 @@ describe('EventComponent', () => {
         }
     );
 
-    //TODO test clicking on the menu!
+    des = fixture.debugElement.queryAll(By.css('event-tile'));
+    expect(des[0].componentInstance.openCount).toBe(1); //access the event-tile and ensure its click count was raised.
+    expect(des[1].componentInstance.openCount).toBe(0); //the menu of the second event tile was never clicked
+
 
     //TODO testing a service: get it via the injector:
     //userService = TestBed.get(UserService);

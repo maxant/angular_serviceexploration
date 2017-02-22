@@ -16,13 +16,13 @@ export class EventTileComponent implements OnInit {
 
   ngOnInit() {
         this.items = [
-                { label: "Open", icon: "fa-download", command: this.open }
+                { label: "Open", icon: "fa-download", command: (e: any) => {this.open(e)} } //v. important that we use a function and not just reference the method. otherwise karma tests fail because this is undefined!
         ];
   }
 
   open(e: any) {
     e.originalEvent.stopPropagation();
-    //TODO "this" is undefined when karma runs?!  this.openCount++;
+    this.openCount++;
     console.log("clicked open menu item");
   }
 
