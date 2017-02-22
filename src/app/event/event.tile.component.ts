@@ -10,6 +10,8 @@ export class EventTileComponent implements OnInit {
 
   @Input() event: any;
 
+  openCount: number = 0;
+
   items: MenuItem[];
 
   ngOnInit() {
@@ -20,6 +22,7 @@ export class EventTileComponent implements OnInit {
 
   open(e: any) {
     e.originalEvent.stopPropagation();
+    //TODO "this" is undefined when karma runs?!  this.openCount++;
     console.log("clicked open menu item");
   }
 

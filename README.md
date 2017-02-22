@@ -24,6 +24,8 @@ In nginx this can be achieved with:
 
     error_page 404 =200 /index.html
 
+TODO didnt really work. so temporarily started using has again => see app.routings.ts at bottom or file.
+
 # Running with Backend
 
 - uses nginx
@@ -45,11 +47,12 @@ In nginx this can be achieved with:
       find src/ -type f -exec touch {} +
 
 # TODO
-- why karma tests dont work?
-- get karma running continuously with webpack
-- write protractor e2e tests
+- karma: have npm task for build => run karma once. have another which continuously runs karma. document that karma and webpack dev are kept seperately.
+- write protractor tests
+- read rest of test chapter
 - read rest of module chapter
 - read rest of DI chapter
+- change console.log into proper logging as well as pushing it to a server for prod monitoring
 - fix styling of menu to be a proper span on the left
 - what is the point of the "declarations" attribute on the @NgModule annotation in `app.module.ts` and why do we have to add so much to it?!
 - forms

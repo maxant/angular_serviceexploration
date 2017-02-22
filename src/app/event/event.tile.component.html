@@ -6,7 +6,7 @@
                 <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
             </td>
             <td width="98*">
-                <div class="title">
+                <div class="title test-event-tile-title">
                     {{event.title}}
                 </div>
                 <div class="location">
@@ -15,7 +15,7 @@
             </td>
             <td width="20px" (click)="menu.toggle($event)" >
                 <p-menu #menu popup="popup" [model]="items"></p-menu>
-                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                <i class="fa fa-ellipsis-v test-event-tile-contextmenu" aria-hidden="true"></i>
             </td>
         </tr>
     </table>
