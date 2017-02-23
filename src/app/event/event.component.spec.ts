@@ -7,9 +7,13 @@ import { DebugElement }    from '@angular/core';
 import { EventComponent } from './event.component';
 import { EventTileComponent } from './event.tile.component';
 
+import { findFirstMenuItem, click } from "../test.help";
+
+import * as _ from "lodash";
+
 describe('EventComponent', () => {
 
-  let comp:    EventComponent;
+  let eventComponent: EventComponent;
   let fixture: ComponentFixture<EventComponent>;
   let des:     DebugElement[];
   let el:      HTMLElement;
@@ -34,7 +38,7 @@ describe('EventComponent', () => {
                     ]
                 }
             },
-            {
+            { //mock router too!
                 provide: Router,
                 useValue: {
                 }
@@ -43,52 +47,33 @@ describe('EventComponent', () => {
     });
 
     fixture = TestBed.createComponent(EventComponent);
-
-    comp = fixture.componentInstance; // EventComponent test instance
+    eventComponent = fixture.componentInstance;
   });
 
   it ('should work', () => {
+
     fixture.detectChanges();
-    expect(fixture.componentInstance instanceof EventComponent).toBe(true, 'should create EventComponent');
 
-    des = fixture.debugElement.queryAll(By.css('event-tile .test-event-tile-title'));
-    expect(des.length).toBe(2);
-    expect(comp.events.length).toBe(2);
+    expect(eventComponent instanceof EventComponent).toBeTruthy();
 
-    el = des[0].nativeElement;
+    let eventTiles = fixture.debugElement.queryAll(By.css('event-tile'));
+    expect(eventTiles.length).toBe(2);
+    expect(eventComponent.events.length).toBe(2);
+
+    el = eventTiles[0].query(By.css('.test-event-tile-title')).nativeElement;
     expect(el.textContent).toContain("e1");
 
-    el = des[1].nativeElement;
+    el = eventTiles[1].query(By.css('.test-event-tile-title')).nativeElement;
     expect(el.textContent).toContain("e2");
 
-    des = fixture.debugElement.queryAll(By.css('event-tile .test-event-tile-contextmenu'));
-    des[0].triggerEventHandler('click', null);
+    let ctxMenu = eventTiles[0].query(By.css('.test-event-tile-contextmenu'));
+    click(ctxMenu); //opens menu
 
-    des = fixture.debugElement.queryAll(By.css('event-tile li.ui-menuitem a')); //TODO is there a better way of doing this?
-    des[0].triggerEventHandler('click',
-        {
-            preventDefault: function(){},
-            stopPropagation: function(){}
-        }
-    );
+    let openMenuItem = findFirstMenuItem(eventTiles[0], /Open/);
+    click(openMenuItem);
 
-    des = fixture.debugElement.queryAll(By.css('event-tile'));
-    expect(des[0].componentInstance.openCount).toBe(1); //access the event-tile and ensure its click count was raised.
-    expect(des[1].componentInstance.openCount).toBe(0); //the menu of the second event tile was never clicked
-
-
-    //TODO testing a service: get it via the injector:
-    //userService = TestBed.get(UserService);
-    /*
-    // TwainService actually injected into the component
-    twainService = fixture.debugElement.injector.get(TwainService);
-
-    // Setup spy on the `getQuote` method
-    spy = spyOn(twainService, 'getQuote')
-          .and.returnValue(Promise.resolve(testQuote));
-
-    tick();                  // wait for async getQuote
-    */
+    expect(eventTiles[0].componentInstance.openCount).toBe(1); //access the event-tile and ensure its click count was raised.
+    expect(eventTiles[1].componentInstance.openCount).toBe(0); //the menu of the second event tile was never clicked
   });
 
 });

@@ -55,6 +55,24 @@ TODO didnt really work. so temporarily started using has again => see app.routin
       find src/ -type f -exec touch {} +
 
 # TODO
+
+    //TODO create a spec dedicated to testing a service
+    //TODO create a spec dedicated to testing a component class? not really needed, as controllers like that should only have methods which are called by templates! 
+    //TODO create a spec dedicated to testing a pipe
+    //TODO create a spec dedicated to testing a directive
+    //TODO testing a service: get it via the injector:
+    //userService = TestBed.get(UserService);
+    /*
+    // TwainService actually injected into the component
+    twainService = fixture.debugElement.injector.get(TwainService);
+
+    // Setup spy on the `getQuote` method
+    spy = spyOn(twainService, 'getQuote')
+          .and.returnValue(Promise.resolve(testQuote));
+
+    tick();                  // wait for async getQuote
+    */
+
 - karma: have npm task for build => run karma once. have another which continuously runs karma. document that karma and webpack dev are kept seperately.
 - write protractor tests
 - read rest of test chapter
