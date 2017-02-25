@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Headers, Http, Response } from "@angular/http";
+import { EventModel } from "./event.service";
 
 const url = "/events/events.json";
 
@@ -8,13 +9,13 @@ export class EventIntegrationService {
 
   constructor(private http: Http) { }
 
-  getEvents(): Promise<any[]> {
+  getEvents(): Promise<EventModel[]> {
     return this.http.get(url)
            .toPromise()
            .then(response => {
                console.log("got response from server: " + JSON.stringify(response));
                // TODO check on response.status === 200
-               return response.json() as any[]; // see how we use "as" to clarify the types from the server :-)
+               return response.json() as EventModel[]; // see how we use "as" to clarify the types from the server :-)
            }).catch(this.handleError);
   }
 

@@ -12,6 +12,9 @@
                 <div class="location">
                     {{event.location}}
                 </div>
+                <div class="date">
+                    {{event.date | date:fullDate}}
+                </div>
             </td>
             <td width="20px" (click)="menu.toggle($event)" >
                 <p-menu #menu popup="popup" [model]="items"></p-menu>

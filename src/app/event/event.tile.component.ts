@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { MenuItem } from "primeng/primeng";
+import { EventModel } from "./event.service";
 
 @Component({
   selector: "event-tile",
@@ -8,7 +9,7 @@ import { MenuItem } from "primeng/primeng";
 })
 export class EventTileComponent implements OnInit {
 
-  @Input() event: any;
+  @Input() event: EventModel;
 
   openCount: number = 0;
 
@@ -16,7 +17,7 @@ export class EventTileComponent implements OnInit {
 
   ngOnInit() {
         this.items = [
-                { label: "Open", icon: "fa-download", command: (e: any) => {this.open(e)} } //v. important that we use a function and not just reference the method. otherwise karma tests fail because this is undefined!
+                { label: "Open", icon: "fa-download", command: (e: any) => this.open(e) } // v. important that we use a function and not just reference the method. otherwise karma tests fail because 'this' is undefined!
         ];
   }
 
