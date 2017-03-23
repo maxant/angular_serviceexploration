@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Headers, Http, Response } from "@angular/http";
 import { EventModel } from "./event.service";
 
-const url = "/events/events.json";
+const url = "/events/all";
 
 @Injectable()
 export class EventIntegrationService {

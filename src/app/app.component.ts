@@ -10,6 +10,8 @@ import * as _ from "lodash";
 
 import "../styles.css"; // import, so that webpack packs it up
 
+import {KeycloakService} from "./keycloak/keycloak.service";
+
 @Component({
   selector: "app",
   template: require("./app.component.html"),
@@ -25,8 +27,11 @@ export class AppComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private marketIntegrationService: MarketIntegrationService,
-    private modelService: ModelService
-  ) { }
+    private modelService: ModelService,
+    private kc: KeycloakService
+  ) {
+console.log("A1");
+  }
 
   isWaiting() {
     return this.marketIntegrationService.isWaiting;
@@ -37,6 +42,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+console.log("A2");
     this.getHeroes();
 
     console.log("app.component init - using lodash version " + _.VERSION);
@@ -46,6 +52,10 @@ export class AppComponent implements OnInit {
 
   onclick() {
     this.clickCount++;
+  }
+
+  logout() { // TODO add link for logging out
+    this.kc.logout();
   }
 }
 

@@ -5,8 +5,10 @@ import * as _ from "lodash";
 export interface EventModel {
     title?: string;
     location?: string;
-    date?: Date;
+    date?: Date; //this even works with iso strings sent from the server :-)
 }
+
+
 
 @Injectable()
 export class EventService {

@@ -1,8 +1,10 @@
 import { NgModule }             from "@angular/core";
+import { ErrorHandler }         from "@angular/core";
 import { BrowserModule }        from "@angular/platform-browser";
 import { FormsModule }          from "@angular/forms";
 import { HttpModule }           from "@angular/http";
 import { AppComponent }         from "./app.component";
+import { MyErrorHandler }       from "./error.handler";
 import { HeroDetailComponent }  from "./hero-detail.component";
 import { HeaderComponent }      from "./header/header.component";
 import { MenuComponent }        from "./menu/menu.component";
@@ -18,6 +20,9 @@ import { MarketIntegrationService }         from "./market.integration.service";
 import { EventIntegrationService }         from "./event/event.integration.service";
 
 import { ButtonModule, MenuModule } from "primeng/primeng";
+
+import { KeycloakService } from "./keycloak/keycloak.service";
+import { KeycloakHttp, KEYCLOAK_HTTP_PROVIDER } from "./keycloak/keycloak.http";
 
 @NgModule({
   imports: [
@@ -45,7 +50,10 @@ import { ButtonModule, MenuModule } from "primeng/primeng";
     MarketIntegrationService, // singleton
     MarketResolver, // coz putting it in the app aint good enough
     EventIntegrationService, // singleton
-    EventResolver // coz putting it in the app aint good enough
+    EventResolver, // coz putting it in the app aint good enough
+    {provide: ErrorHandler, useClass: MyErrorHandler},
+    KeycloakService,
+    KEYCLOAK_HTTP_PROVIDER
   ],
 
   bootstrap: [ AppComponent ]
